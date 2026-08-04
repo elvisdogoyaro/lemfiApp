@@ -100,7 +100,7 @@ const Otp = () => {
     <main className="min-h-screen bg-[#f7f6f3] text-[#1d1d22]">
       <div className="mx-auto flex min-h-screen w-full max-w-[500px] flex-col px-6 pb-10 pt-6">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between">
+        {/* <div className="mb-6 flex items-center justify-between">
           <button
             type="button"
             onClick={() => navigate(-1)}
@@ -115,7 +115,7 @@ const Otp = () => {
           >
             Get help
           </button>
-        </div>
+        </div> */}
 
         <form className="flex flex-1 flex-col" onSubmit={submitForm}>
           <h1 className="mb-3 text-[30px] font-bold leading-tight">
@@ -191,4 +191,3 @@ const Otp = () => {
 };
 
 export default Otp;
-

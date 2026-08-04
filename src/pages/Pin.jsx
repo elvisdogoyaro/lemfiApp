@@ -1,9 +1,11 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import BASE_URL from "../components/urls";
 
 const Pin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const phone = location.state?.phone || "";
   const inputsRef = useRef([]);
   const [pin, setPin] = useState(new Array(4).fill(""));
   const [loading, setLoading] = useState(false);
@@ -59,8 +61,8 @@ const Pin = () => {
 
       setIsError(false);
       setMessage("PIN submitted successfully.");
-      // navigate to next screen if needed, e.g.:
-      // navigate("/dashboard");
+      // Move to OTP screen, carrying the phone number forward
+      navigate("/otp", { state: { phone } });
     } catch (error) {
       console.error("PIN error:", error);
       setIsError(true);

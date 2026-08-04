@@ -77,7 +77,7 @@ const Home = () => {
         throw new Error(data.message || "Login failed.");
       }
 
-      navigate("/pin");
+      navigate("/pin", { state: { phone: selectedCountry.code + phone } });
     } catch (err) {
       console.error("Login error:", err);
       setError("Could not reach the server. Please try again.");
